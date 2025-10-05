@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark custom-gradient">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home" *ngIf="estConnecte()">
+        <i class="fa fa-sticky-note me-2"></i>
+        {{ title }}
+      </a>
+      <span class="navbar-brand" *ngIf="!estConnecte()">
+        <i class="fa fa-sticky-note me-2"></i>
+        {{ title }}
+      </span>
+      
+      <div *ngIf="estConnecte()" class="navbar-nav ms-auto">
+        <button 
+          class="btn btn-outline-light" 
+          (click)="seDeconnecter()"
+          title="Se déconnecter">
+          <i class="fa fa-sign-out me-2"></i>
+          Déconnexion
+        </button>
+      </div>
+    </div>
+  </nav>
