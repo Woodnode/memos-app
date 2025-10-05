@@ -1,2 +1,3 @@
 [config]
 project = MemosWeb
+command = npm install && npm run build:prod
