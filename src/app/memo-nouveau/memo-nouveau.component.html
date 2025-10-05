@@ -1,0 +1,52 @@
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center bg-light">
+    <div class="row w-100 justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+        <div class="card shadow">
+          <div class="card-body p-4">
+            <h2 class="card-title text-center mb-4">Nouveau Mémo</h2>
+            
+            <form (ngSubmit)="ajouterMemo()" #memoForm="ngForm">
+              <div class="mb-3">
+                <label for="titre" class="form-label">Titre</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="titre"
+                  name="titre"
+                  [(ngModel)]="nouveauMemo.titre"
+                  required>
+              </div>
+  
+              <div class="mb-4">
+                <label for="description" class="form-label">Description</label>
+                <textarea 
+                  class="form-control" 
+                  id="description"
+                  name="description"
+                  [(ngModel)]="nouveauMemo.description"
+                  rows="5"
+                  placeholder="Décrivez votre mémo...">
+                </textarea>
+              </div>
+  
+              <div class="d-grid gap-2">
+                <button 
+                  type="submit" 
+                  class="btn btn-success btn-lg" 
+                  [disabled]="!memoForm.form.valid">
+                  Ajouter
+                </button>
+                
+                <button 
+                  type="button" 
+                  class="btn btn-outline-secondary" 
+                  (click)="annuler()">
+                  Annuler
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

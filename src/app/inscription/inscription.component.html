@@ -1,0 +1,51 @@
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center bg-light">
+    <div class="row w-100 justify-content-center">
+      <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+        <div class="card shadow">
+          <div class="card-body p-4">
+            <h2 class="card-title text-center mb-4">Créer un compte</h2>
+            
+            <form (ngSubmit)="sInscrire()" #compteForm="ngForm">
+              <div class="mb-3">
+                <label for="nomUtilisateur" class="form-label">Nom d'utilisateur</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="nomUtilisateur"
+                  name="nomUtilisateur"
+                  [(ngModel)]="compte.nomUtilisateur"
+                  required>
+              </div>
+  
+              <div class="mb-4">
+                <label for="motDePasse" class="form-label">Mot de passe</label>
+                <input 
+                  type="password" 
+                  class="form-control" 
+                  id="motDePasse"
+                  name="motDePasse"
+                  [(ngModel)]="compte.motDePasse"
+                  required>
+              </div>
+  
+              <div class="d-grid gap-2">
+                <button 
+                  type="submit" 
+                  class="btn btn-success btn-lg" 
+                  [disabled]="!compteForm.form.valid">
+                  Créer le compte
+                </button>
+                
+                <button 
+                  type="button" 
+                  class="btn btn-outline-secondary" 
+                  (click)="annuler()">
+                  Annuler
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
