@@ -7,7 +7,7 @@ import { Observable, map } from 'rxjs';
     providedIn: 'root'
 })
 export class CompteService {
-    private urlBase = 'http://localhost:5266/api/Compte';
+    private urlBase = 'https://memos-api-votre-nom.azurewebsites.net/api/Compte';
     private jeton: string = '';
 
     constructor(private http: HttpClient) {}

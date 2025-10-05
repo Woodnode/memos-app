@@ -9,7 +9,7 @@ import { CompteService } from './compte.service';
 })
 
 export class MemoService {
-    private urlBase = 'http://localhost:5266/api/Memo';
+    private urlBase = 'https://memos-api-votre-nom.azurewebsites.net/api/Memo';
 
 
     constructor(private http: HttpClient, private compteService: CompteService) { }
